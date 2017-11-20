@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120170021) do
+ActiveRecord::Schema.define(version: 20171120192905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,13 +18,12 @@ ActiveRecord::Schema.define(version: 20171120170021) do
   create_table "bookings", force: :cascade do |t|
     t.date     "date"
     t.integer  "price"
-    t.integer  "meal_id"
-    t.integer  "user_id"
     t.integer  "people"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "meal_id"
+    t.integer  "buyer_id"
     t.index ["meal_id"], name: "index_bookings_on_meal_id", using: :btree
-    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
   create_table "meals", force: :cascade do |t|
@@ -33,10 +32,9 @@ ActiveRecord::Schema.define(version: 20171120170021) do
     t.string   "photo"
     t.string   "category"
     t.integer  "price"
-    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_meals_on_user_id", using: :btree
+    t.integer  "chef_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,11 +50,12 @@ ActiveRecord::Schema.define(version: 20171120170021) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "bookings", "meals"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "meals", "users"
 end
