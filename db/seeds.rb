@@ -37,7 +37,8 @@ chefs.each do |chef|
      description: Faker::Coffee.notes,
      photo: "https://source.unsplash.com/collection/140489/200x200",
      category: %w(chinese italian japanese french brazillian).sample,
-     price: Faker::Commerce.price
+     price: Faker::Commerce.price,
+     city: Faker::Address.city
       )
   end
 end
