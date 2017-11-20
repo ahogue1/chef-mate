@@ -12,7 +12,10 @@
 require 'faker'
 
 puts 'Cleaning database...'
-Restaurant.destroy_all
+Booking.destroy_all
+Meal.destroy_all
+User.destroy_all
+
 
 puts "Creating 10 users with a meal and booking"
 
@@ -25,10 +28,7 @@ puts "Creating 10 users with a meal and booking"
     )
 end
 
-chefs = []
-5.times do |i|
-  chefs << User.find(i + 1)
-end
+chefs = User.take(5)
 
 chefs.each do |chef|
   2.times do
@@ -37,24 +37,22 @@ chefs.each do |chef|
      description: Faker::Coffee.notes,
      photo: "https://source.unsplash.com/collection/140489/200x200",
      category: %w(chinese italian japanese french brazillian).sample,
-     price: Faker::Commerce.price,
-     city: Faker::Address.city
+     price: (0..500).to_a.sample,
+     # city: Faker::Address.city, This needs to be schema
       )
   end
 end
 
 
-buyers = []
-5.times do |i|
-  buyers << User.find(i - 1)
-end
+meals = Meal.take(5)
 
-buyers.each do |buyer|
-  buyer.bookings.create(
+meals.each do |meal|
+  meal.bookings.create(
     date: Faker::Date.forward(23),
-    price: Faker::Commerce.price,
-    people: (0..10).sample,
-    address: Faker::Address.street_address
+    price: (0..500).to_a.sample,
+    people: (0..10).to_a.sample,
+    # address: Faker::Address.street_address, Add to schema
+    buyer: User.take(1)[0]
     )
 end
 
