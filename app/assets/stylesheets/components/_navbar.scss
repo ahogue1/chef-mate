@@ -11,7 +11,7 @@
 }
 
 /* Logo */
-.navbar-wagon-brand img {
+.navbar-chef-brand img {
   height: 50px;
 }
 
@@ -74,4 +74,18 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.fa-cutlery:before{
+  border-radius: 50%;
+}
+
+#logo{
+  width: 70px;
+}
+
+.title{
+  position: absolute;
+  padding-left: 96px;
+  padding-top: 23px;
 }
