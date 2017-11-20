@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :meals, foreign_key: 'chef_id'
   has_many :bookings, foreign_key: 'buyer_id', through: :meals
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
 end

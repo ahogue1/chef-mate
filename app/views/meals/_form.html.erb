@@ -7,7 +7,7 @@
     <%= f.input :photo %>
     <%= f.input :category %>
     <%= f.input :price %>
-    <%= f.association :user %>
+    <%= f.association :chef, label_method: :name %>
   </div>
 
   <div class="form-actions">
