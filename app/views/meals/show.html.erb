@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-4">
         <div class="left-align meal-image-show">
-          <%= image_tag(@meal.photo) %>
+          <%= image_tag(@meal.photo, :class => "meal-image") %>
 
         </div>
       </div>
@@ -14,14 +14,28 @@
           <p>By <%= @meal.chef.name  %></p>
           <h2>  <%= @meal.description %></h2>
           <p> Price: R$  <%= @meal.price %> per person </p>
-
+           <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" placeholder="Pick a date" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                     <input class="form-control" type="number" value="people" id="number-input" placeholder="How many people?">
+                </div>
+                    <input class="submit-button" type="submit" value="Request booking">
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
+  <% content_for(:after_js) do %>
+    <script type="text/javascript">
+      $(function () {
+       $('#datetimepicker1').datetimepicker1();
+      });
+    </script>
+  <% end %>
 
 
 
