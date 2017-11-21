@@ -5,9 +5,9 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.input :category %>
     <%= f.input :price %>
-    <%= f.association :chef, label_method: :name %>
   </div>
 
   <div class="form-actions">
