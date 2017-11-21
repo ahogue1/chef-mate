@@ -1,0 +1,9 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=meal.photo %>);">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2><%= meal.name %></h2>
+    <p><%= meal.description %></p>
+  </div>
+  <img class="card-user" src=<%= meal.chef.facebook_picture_url %>>
+  <a class="card-link" href=<%= meal_path(meal) %> ></a>
+</div>

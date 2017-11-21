@@ -6,45 +6,15 @@
 
 <div class="row meals">
   <% @meals.each do |meal| %>
-  <div class="col-xs-12 col-sm-4 col-md-3">
-    <h3> <%= meal.name %></h3>
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <%= render 'card', meal: meal %>
   </div>
   <% end %>
 </div>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Photo</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @meals.each do |meal| %>
-      <tr>
-        <td><%= meal.name %></td>
-        <td><%= meal.description %></td>
-        <td><%= meal.photo %></td>
-        <td><%= meal.category %></td>
-        <td><%= meal.price %></td>
-        <td><%= meal.chef_id %></td>
-        <td><%= link_to 'Show', meal %></td>
-        <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
-        <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Meal', new_meal_path %>
-
+<div class="fixed-action-btn">
+  <%= link_to 'New Meal', new_meal_path, class: "btn btn-danger btn-fixed" %>
+</div>
 </div>
