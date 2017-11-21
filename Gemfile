@@ -17,7 +17,6 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'omniauth-facebook'
 
