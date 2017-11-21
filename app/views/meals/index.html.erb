@@ -1,6 +1,17 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/banner' %>
 
-<h1>Meals</h1>
+<div class="container">
+
+<%= render 'search' %>
+
+<div class="row meals">
+  <% @meals.each do |meal| %>
+  <div class="col-xs-12 col-sm-4 col-md-3">
+    <h3> <%= meal.name %></h3>
+  </div>
+  <% end %>
+</div>
+
 
 <table>
   <thead>
@@ -35,3 +46,5 @@
 <br>
 
 <%= link_to 'New Meal', new_meal_path %>
+
+</div>
