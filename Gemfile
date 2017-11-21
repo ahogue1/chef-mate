@@ -20,6 +20,8 @@ gem 'uglifier'
 gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'omniauth'
+gem 'carrierwave', '~> 0.11.2'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'pry-byebug'
