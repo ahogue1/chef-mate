@@ -19,7 +19,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'simple_form'
 gem 'jquery-ui-rails'
-gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'carrierwave', '~> 0.11.2'
 gem 'cloudinary'
 
