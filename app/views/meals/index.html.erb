@@ -4,6 +4,15 @@
 
 <%= render 'search' %>
 
+<div class="row meals">
+  <% @meals.each do |meal| %>
+  <div class="col-xs-12 col-sm-4 col-md-3">
+    <h3> <%= meal.name %></h3>
+  </div>
+  <% end %>
+</div>
+
+
 <table>
   <thead>
     <tr>
