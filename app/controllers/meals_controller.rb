@@ -25,6 +25,7 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = Meal.new(meal_params)
+    @meal.chef = current_user
 
     respond_to do |format|
       if @meal.save
@@ -69,6 +70,7 @@ class MealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
-      params.require(:meal).permit(:name, :description, :photo, :category, :price, :user_id)
+      params.require(:meal).permit(:name, :description, :photo, :category, :price)
+
     end
 end
