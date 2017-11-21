@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bookings, only: [:create, :show]
   resources :meals
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
