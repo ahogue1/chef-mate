@@ -1,41 +1,21 @@
 .tabs {
   display: flex;
-  padding: 10px 10px 0 70px;
-  border-radius: 7px;
-}
-.tabs a {
-  color: white;
-}
-.tabs a:hover {
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 0.8;
-}
-.tabs h3 {
-  font-size: 17px;
-  font-weight: bold;
-  margin-top: 0;
-}
-.tabs p {
-  color: gray;
-  margin-bottom: 0;
-}
-.tab {
-  background: white;
-  flex: 0 0 25%;
-  text-align: center;
-  padding: 20px 0;
-}
-.tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.tab:last-child {
-  border-radius: 0 10px 0 0;
-}
-.tab.active {
-  background: gray;
 }
 
-.tab.active p {
-  color: white;
+.tab {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  color: #B1B1B1;
+}
+
+.active {
+color: black;
+font-weight: bold;
+border-bottom: thick solid #00A699;
+}
+
+
+.tab:hover {
+color: black;
 }
