@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'pry-byebug'
