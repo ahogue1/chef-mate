@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+  resources :profiles, only: [:show]
   resources :bookings, only: [:create, :show]
   resources :meals
   devise_for :users,
