@@ -29,22 +29,27 @@
 
           </div>
         </form>
+
+
+
+
+
+
+
+
       </div>
     </div>
   </div>
 </div>
 
 
-
   <% content_for(:after_js) do %>
-   <script type="text/javascript">
-     $(function () {
-      $('#datetimepicker1').datetimepicker();
-            });
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
     </script>
   <% end %>
-
-
 
 
 

@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @meal = @booking.meal
   end
 
 
