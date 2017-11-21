@@ -29,11 +29,19 @@
   </div>
 </div>
 
+<div class="input-group date" data-provide="datepicker">
+    <input type="text" class="form-control">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
+
   <% content_for(:after_js) do %>
     <script type="text/javascript">
-      $(function () {
-       $('#datetimepicker1').datetimepicker1();
-      });
+      $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
     </script>
   <% end %>
 
