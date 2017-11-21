@@ -1,0 +1,49 @@
+
+.wrapper {
+  margin-top: 30px;
+}
+
+
+.meal-info {
+  background-color: white;
+  max-width: 700px;
+  padding: 20px;
+  border-radius: 7px;
+  margin-right: 50px;
+}
+
+.meal-image-show, .category-show{
+  margin-left: 50px;
+}
+
+.category-show {
+  text-transform: uppercase;
+  background-color: #C9C3C3;
+  width: 100px;
+  text-align: center;
+  border-radius: 7px;
+  padding: 5px;
+  font-weight: ligher;
+}
+
+.meal-image {
+  border-radius: 7px;
+  width: 300px;
+}
+
+#number-input {
+  margin-left: 20px;
+  max-width: 250px;
+}
+
+.submit-button {
+  margin-top:30px;
+  background-color: #F55D3E;
+  padding: 10px;
+  color: white;
+  opacity: 0.8;
+}
+
+.submit-button:hover {
+  opacity: 1;
+}
