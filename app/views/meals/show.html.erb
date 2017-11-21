@@ -1,34 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <div class="container">
+    <p class="category-show">  <%= @meal.category %> </p>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="left-align meal-image-show">
+          <%= image_tag(@meal.photo) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @meal.name %>
-</p>
+        </div>
+      </div>
+       <div class="col-xs-12 col-md-8">
+        <div class="right-align meal-info">
+          <h1> <%= @meal.name %></h1>
+          <p>By <%= @meal.chef.name  %></p>
+          <h2>  <%= @meal.description %></h2>
+          <p> Price: R$  <%= @meal.price %> per person </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @meal.description %>
-</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @meal.photo %>
-</p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @meal.category %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @meal.price %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @meal.chef.name %>
-</p>
 
-<%= link_to 'Edit', edit_meal_path(@meal) %> |
-<%= link_to 'Back', meals_path %>
+
+
