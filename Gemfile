@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'simple_form'
 gem 'jquery-ui-rails'
+gem 'omniauth'
 
 group :development, :test do
   gem 'pry-byebug'
