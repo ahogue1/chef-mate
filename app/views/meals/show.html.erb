@@ -16,8 +16,8 @@
           <p> Price: R$  <%= @meal.price %> per person </p>
           <form action="<%= bookings_path %>" method="post">
              <div class="form-group">
-                  <div class='input-group date' id='datetimepicker1'>
-                      <input name="booking[date]" type='text' class="form-control" placeholder="Pick a date" />
+                  <div class='input-group date'>
+                      <input name="booking[date]" type='text' class="form-control"  placeholder="Pick a date" data-provide='datepicker' />
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -30,26 +30,11 @@
           </div>
         </form>
 
-
-
-
-
-
-
-
       </div>
     </div>
   </div>
 </div>
 
-
-  <% content_for(:after_js) do %>
-    <script>
-    $( function() {
-      $( "#datepicker" ).datepicker();
-    } );
-    </script>
-  <% end %>
 
 
 
