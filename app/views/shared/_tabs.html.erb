@@ -13,14 +13,14 @@
 
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active no-border" id="home">
-    <% if @booking.nil? %>
+    <% if @booking.empty? %>
     <%= render 'profiles/empty-bookings' %>
     <% else %>
     <%= render 'profiles/booking-summary', booking: @booking %>
     <% end %>
   </div>
   <div role="tabpanel" class="tab-pane no-border" id="profile">
-    <% if @meal.nil? %>
+    <% if @meal.empty? %>
     <%= render 'profiles/empty-meals' %>
     <% else %>
     <%= render 'profiles/meal-summary', booking: @booking %>
