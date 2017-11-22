@@ -1,3 +1,11 @@
 
-    <%= @booking.last.price %>
+<div class="activity empty">
+  <ul>
+  <% @booking.each do |booking| %>
+    <%= booking.meal.name %>
+    <li> <%= booking.price %></li>
+
+  <% end %>
+  </ul>
+</div>
 
