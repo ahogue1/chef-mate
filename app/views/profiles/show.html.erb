@@ -16,11 +16,11 @@
 
             <%= render 'shared/tabs' %>
 
-            <%= @booking.last.price %>
-            <%= @meal.last.name %>
-
-
-            <%= render 'profiles/empty-bookings' %>
+            <% if @booking.nil? %>
+              <%= render 'profiles/empty-bookings' %>
+                <% else %>
+                  <%= render 'profiles/booking-summary', booking: @booking %>
+            <% end %>
 
           </div>
       </div>
