@@ -1,1 +1,17 @@
 @import "new";
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.meals {
+  flex: 1 0 auto;
+}
+
+#map {
+  flex: 0 0 40%;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
