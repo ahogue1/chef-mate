@@ -2,15 +2,16 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name, label: "Cuisine Name", placeholder: "Pasta, Pizza, Chicken Picatta, etc."%>
+    <%= f.input :name, label: "Cuisine Name", placeholder: " Pasta, Pizza, Chicken Picatta, etc..."%>
     <%= f.input :description, placeholder: "Describe the Meal..."%>
+    <%= f.input :address, label: "Address of event", placeholder: "1600 Pennsylvania Ave..." %>
     <%= f.input :photo, label: "Add a photo" %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :category, label: "Type of Cuisine", placeholder: "Italian"%>
-    <%= f.input :price, label: "Price per Person" %>
+    <%= f.input :category, label: "Type of Cuisine", placeholder: " Italian, Mexican, Americana, etc..."%>
+    <%= f.input :price, label: " Price per Person", placeholder: "..."%>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.button :submit, class: "btn btn-primary", id: "submit-button-new" %>
   </div>
 <% end %>

@@ -21,23 +21,39 @@
   }
 }
 
-.new-meal-header{
+#cancel-btn-new{
+  color: black;
+  margin-left: 103px;
+}
 
+#cancel-btn-new:hover{
+  text-decoration: underline;
 }
 
 .new-meal-form{
   width: 300px;
-  margin: 10 auto;
+  margin: 19px;
+  margin-left: 124px;
+  padding-bottom: 2px;
 }
 
-#new-meal-btn{
-  margin: 10px;
-
-}
 
 .new-meal-wrapper{
   background-size: cover;
 }
 #new-meal-photo{
   background-size: cover;
+}
+
+#back-link-new{
+  color: black;
+}
+
+
+#back-link-new:hover{
+  text-decoration: underline;
+}
+
+#submit-button-new{
+  margin-left: 94px;
 }
