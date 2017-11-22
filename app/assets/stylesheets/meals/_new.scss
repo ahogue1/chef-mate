@@ -1,0 +1,43 @@
+
+.new-meal-container{
+  width: 600px;
+  margin: 0 auto;
+  h1, label{
+    margin-top: 0px;
+    color: white;
+    padding-top: 5px;
+
+  }
+  h2{
+    color: orange;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  input{
+    font-size: 14px;
+  }
+  textarea{
+    font-size: 14px;
+  }
+}
+
+.new-meal-header{
+
+}
+
+.new-meal-form{
+  width: 300px;
+  margin: 10 auto;
+}
+
+#new-meal-btn{
+  margin: 10px;
+
+}
+
+.new-meal-wrapper{
+  background-size: cover;
+}
+#new-meal-photo{
+  background-size: cover;
+}
