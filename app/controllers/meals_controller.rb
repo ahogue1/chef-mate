@@ -5,6 +5,12 @@ class MealsController < ApplicationController
   # GET /meals.json
   def index
     @meals = Meal.all
+
+    @mapped_meals = Meal.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@mapped_meals) do |meal, marker|
+      marker.lat meal.latitude
+      marker.lng meal.longitude
+    end
   end
 
   # GET /meals/1
