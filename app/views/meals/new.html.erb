@@ -1,5 +1,16 @@
-<h1>New Meal</h1>
 
-<%= render 'form', meal: @meal %>
 
-<%= link_to 'Back', meals_path %>
+<div class="new-meal-wrapper" id= "new-meal-photo"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path("new_meal1.jpg")%> );">
+  <div class="new-meal-container">
+    <div class="new-meal-header">
+      <h1>Become a Chef!</h1>
+      <h2>Add a dining experience and bust out your apron</h2>
+    </div>
+
+    <div class="new-meal-form">
+      <%= render 'form', meal: @meal %>
+    </div>
+
+      <%= link_to '(or cancel)', meals_path, id: "cancel-btn-new"%>
+  </div>
+</div>
