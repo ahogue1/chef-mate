@@ -1,11 +1,12 @@
 
 <div class="activity empty">
-  <ul>
-  <% @booking.each do |booking| %>
-    <%= booking.meal.name %>
-    <li> <%= booking.price %></li>
 
+  <% @booking.each do |booking| %>
+   <div class="booking">
+    <%= booking.meal.name %>
+    <p> Price: R$ <%= booking.price %></p>
+  </div>
   <% end %>
-  </ul>
+
 </div>
 
