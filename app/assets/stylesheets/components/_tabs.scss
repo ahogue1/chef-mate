@@ -19,3 +19,19 @@ border-bottom: thick solid #00A699;
 .tab:hover {
 color: black;
 }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: none;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.no-border {
+  border-bottom: none;
+}
+
+.nav-tabs a {
+  color: #B1B1B1;
+}
