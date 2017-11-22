@@ -1,0 +1,59 @@
+
+.new-meal-container{
+  width: 600px;
+  margin: 0 auto;
+  h1, label{
+    margin-top: 0px;
+    color: white;
+    padding-top: 5px;
+
+  }
+  h2{
+    color: orange;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  input{
+    font-size: 14px;
+  }
+  textarea{
+    font-size: 14px;
+  }
+}
+
+#cancel-btn-new{
+  color: black;
+  margin-left: 103px;
+}
+
+#cancel-btn-new:hover{
+  text-decoration: underline;
+}
+
+.new-meal-form{
+  width: 300px;
+  margin: 19px;
+  margin-left: 124px;
+  padding-bottom: 2px;
+}
+
+
+.new-meal-wrapper{
+  background-size: cover;
+}
+#new-meal-photo{
+  background-size: cover;
+}
+
+#back-link-new{
+  color: black;
+}
+
+
+#back-link-new:hover{
+  text-decoration: underline;
+}
+
+#submit-button-new{
+  margin-left: 94px;
+}
