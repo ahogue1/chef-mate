@@ -18,12 +18,10 @@
 
 .category-show {
   text-transform: uppercase;
-  background-color: #C9C3C3;
+  color: #32B796;
   width: 100px;
   text-align: center;
-  border-radius: 7px;
-  padding: 5px;
-  font-weight: ligher;
+
 }
 
 .meal-image {
@@ -46,4 +44,8 @@
 
 .submit-button:hover {
   opacity: 1;
+}
+
+#margin-bottom {
+  margin-bottom: 30px;
 }
