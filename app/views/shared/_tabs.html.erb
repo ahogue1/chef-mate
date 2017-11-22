@@ -1,11 +1,18 @@
-<!-- Nav tabs -->
+
+
+<!-- From Boostrap  - other features here https://getbootstrap.com/docs/3.3/javascript/#tabs
+ -->
+
+ <!-- Tab menu -->
 <ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="active"><a class="tab" href="#home" aria-controls="my-bookings" role="tab" data-toggle="tab">My bookings</a></li>
+  <li role="presentation" class="active   "><a class="tab" href="#home" aria-controls="my-bookings" role="tab" data-toggle="tab">My bookings</a></li>
   <li role="presentation"><a href="#profile" aria-controls="my-meals" role="tab" data-toggle="tab">My meals</a></li>
 </ul>
-<!-- Tab panes -->
+
+ <!-- Tab content -->
+
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active  no-border" id="home">
+  <div role="tabpanel" class="tab-pane active no-border" id="home">
     <% if @booking.nil? %>
     <%= render 'profiles/empty-bookings' %>
     <% else %>
