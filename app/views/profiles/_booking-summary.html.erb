@@ -1,7 +1,7 @@
 
-<div class="activity empty">
+<div class="activity">
 
-  <% @booking.each do |booking| %>
+  <% bookings.each do |booking| %>
    <div class="booking">
     <%= booking.meal.name %>
     <p> Price: R$ <%= booking.price %></p>

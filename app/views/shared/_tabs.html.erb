@@ -13,17 +13,17 @@
 
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active no-border" id="home">
-    <% if @booking.empty? %>
+    <% if @bookings.empty? %>
     <%= render 'profiles/empty-bookings' %>
     <% else %>
-    <%= render 'profiles/booking-summary', booking: @booking %>
+    <%= render 'profiles/booking-summary', bookings: @bookings %>
     <% end %>
   </div>
   <div role="tabpanel" class="tab-pane no-border" id="profile">
-    <% if @meal.empty? %>
+    <% if @meals.empty? %>
     <%= render 'profiles/empty-meals' %>
     <% else %>
-    <%= render 'profiles/meal-summary', booking: @booking %>
+    <%= render 'profiles/meal-summary', meals: @meals %>
     <% end %>
   </div>
 </div>
