@@ -3,23 +3,36 @@
 
     <% if current_user.chef? && current_user.buyer? %>
      <div class="profile-choose">
-      <p>Switch profiles</p>
-     <button class="btn btn-info">As a diner</button>
-     <button class="btn btn-info">As a chef</button>
-   </div>
-   <%  end %>
+      <button class="btn btn-info" id="diner">Switch to Diner</button>
+     </div>
 
+   <%  end %>
+    <div id="content">
       <% if current_user.chef? && current_user.buyer? %>
         <%= render 'chef_profile', user: @user, bookings: @bookings, meals: @meals %>
       <% elsif %>
         <% current_user.chef? %>
         <%= render 'chef_profile', user: @user, bookings: @bookings, meals: @meals  %>
       <% else %>
-        <%= render 'buyer_profile',user: @user, bookings: @bookings, meals: @meals %>
+        <%= render 'diner_profile',user: @user, bookings: @bookings, meals: @meals %>
       <% end %>
-
     </div>
   </div>
+</div>
 
 
 
+<% content_for(:after_js) do %>
+  <script>
+
+  const render_diner = (event) => {
+    document.getElementById("content").innerHTML = '<%= j render "diner_profile",user: @user, bookings: @bookings, meals: @meals %>';
+  }
+
+  const diner = document.getElementById("diner");
+  diner.addEventListener("click", render_diner);
+  alert("hello");
+
+
+  </script>
+<% end %>
