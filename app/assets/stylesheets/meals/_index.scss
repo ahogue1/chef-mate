@@ -4,6 +4,8 @@
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 1px;
 }
 
 .meals {
@@ -11,8 +13,10 @@
 }
 
 #map {
+
   flex: 0 0 40%;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
+  margin: 12px 23px;
 }
