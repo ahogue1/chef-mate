@@ -12,16 +12,18 @@ class Booking < ApplicationRecord
     self.price = meal.price * people
   end
 
-  def confirm
+  def confirm!
     self.confirmed = true
+    self.save
   end
 
   def confirmed?
     self.confirmed
   end
 
-  def cancel
+  def cancel!
     self.confirmed = false
+    self.save
   end
 
 end

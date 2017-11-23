@@ -22,7 +22,7 @@
       -->
       <!-- Tab menu -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a class="tab" href="#booking" aria-controls="requests" role="tab" data-toggle="tab">Diner Requests</a></li>
+        <li role="presentation" class="active"><a class="tab" href="#booking" aria-controls="requests" role="tab" data-toggle="tab">Booking Requests</a></li>
         <li role="presentation"><a href="#confirmed" aria-controls="confirmed" role="tab" data-toggle="tab">Confirmed customers</a></li>
         <li role="presentation"><a href="#meals" aria-controls="meals" role="tab" data-toggle="tab">My meals</a></li>
 
@@ -43,11 +43,14 @@
 
               <% bookings.each do |booking| %>
                <div class="booking">
+                <% if booking.confirmed? == false %>
                 <%= booking.meal.name %>
                 <p> Price: R$ <%= booking.price %></p>
-                <button>Confirm booking</button>
+                <%= link_to "Confirm", booking_path(booking, confirm: true), method: :patch %>
 
+              <% end %>
               </div>
+
               <% end %>
 
             </div>
@@ -55,15 +58,32 @@
         </div>
           <div role="tabpanel" class="tab-pane no-border" id="confirmed">
             <div class="activity empty">
-              <p>ADD HERE CONFIRMED BOOKINGS - ONCE CHEF HAS CONFIRMED</p>
+               <% bookings.each do |booking| %>
+               <div class="booking">
+                <% if booking.confirmed? == true %>
+                <%= booking.meal.name %>
+                <p> Price: R$ <%= booking.price %></p>
+                  <%= link_to "Cancel", booking_path(booking, cancel: true), method: :patch %>
+              <% end %>
+              </div>
+              <% end %>
             </div>
         </div>
          <div role="tabpanel" class="tab-pane no-border" id="meals">
             <div class="activity empty">
-              <p>ADD MEALS HERE </p>
+              <% meals.each do |meal| %>
+               <div class="booking">
+                <%= meal.name %>
+              </div>
+              <% end %>
+              <%= button_to "Add new meal", new_meal_path, :method => :get %>
+
             </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
