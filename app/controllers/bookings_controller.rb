@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.confirmed = false
     @booking.buyer = current_user
 
     @meal = @booking.meal

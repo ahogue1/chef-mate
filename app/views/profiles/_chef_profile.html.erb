@@ -34,7 +34,7 @@
 
             <div class="activity empty">
               <p>Oh no you don't have any bookings yet 😢 </p> <br>
-              <p>Use social media to promote your meal or create a new onerails <%= link_to "here", new_meal_path %></p>
+              <p>Use social media to promote your meal or create a new one <%= link_to "here", new_meal_path %></p>
             </div>
 
           <% else %>
@@ -45,7 +45,7 @@
                <div class="booking">
                 <%= booking.meal.name %>
                 <p> Price: R$ <%= booking.price %></p>
-                <p class="pending">Pending</p>
+                <button>Confirm booking</button>
 
               </div>
               <% end %>
