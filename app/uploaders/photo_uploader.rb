@@ -11,7 +11,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   process convert: 'jpg'
 
   version :standard do
-    resize_to_fit 800, 600
+    resize_to_fit 600, 400
   end
 
   # Choose what kind of storage to use for this uploader:
