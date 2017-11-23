@@ -1,5 +1,14 @@
 <div class="profile-wrapper">
   <div class="container">
+
+    <% if current_user.chef? && current_user.buyer? %>
+     <div class="profile-choose">
+      <p>Switch profiles</p>
+     <button class="btn btn-info">As a diner</button>
+     <button class="btn btn-info">As a chef</button>
+   </div>
+   <%  end %>
+
     <div class="row">
       <div class="col-xs-12 col-md-4">
         <div class="profile-info">
@@ -14,7 +23,7 @@
         <div class="col-xs-12 col-md-8">
           <div class="profile-activity">
 
-            <%= render 'shared/tabs' %>
+            <%= render 'tabs' %>
 
 
 
