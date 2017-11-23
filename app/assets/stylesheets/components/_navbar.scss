@@ -85,7 +85,13 @@
 }
 
 .title{
-  position: absolute;
-  padding-left: 96px;
-  padding-top: 23px;
+  display: flex;
+  align-items: center;
+  #title-name {
+    color: black;
+    font-weight: lighter;
+    font-size: 22px;
+    padding-left: 15px;
+    margin-top: 10px;
+  }
 }
