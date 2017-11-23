@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_many :meals, foreign_key: 'chef_id'
   has_many :bookings, foreign_key: 'buyer_id', through: :meals
+  after_create :send_welcome_email, :subscribe_to_newsletter
 
   def name
     "#{first_name} #{last_name}"
@@ -30,4 +31,16 @@ class User < ApplicationRecord
       end
     return user
   end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
 end
+
+
