@@ -1,11 +1,7 @@
-
 <div class="row">
-
   <div class="col-xs-12 col-md-4">
-
     <div class="profile-info">
       <h2> <%= @user.name %> </h2>
-
       <%= image_tag(@user.facebook_picture_url, :class => "profile-image") %>
       <div class="edit_profile">
         <p>Email: <%= current_user.email %></p>
@@ -18,9 +14,7 @@
       <div class="my-row">
         <%= image_tag('diner.png', :class => "profile-icon flex-item") %>
         <h2 class="flex-item">My diner profile</h2>
-       </div>
-
-
+      </div>
       <!-- From Boostrap  - other features here https://getbootstrap.com/docs/3.3/javascript/#tabs
       -->
       <!-- Tab menu -->
@@ -32,32 +26,36 @@
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active no-border" id="home">
           <% if @bookings.empty? %>
-
-            <div class="activity empty">
-              <p>Oh no you don't have any bookings yet 😢 </p> <br>
-              <p>Browse meals <%= link_to "here", root_path %></p>
-            </div>
-
+          <div class="activity empty">
+            <p>Oh no you don't have any bookings yet 😢 </p> <br>
+            <p>Browse meals <%= link_to "here", root_path %></p>
+          </div>
           <% else %>
-
-            <div class="activity">
-
-              <% bookings.each do |booking| %>
-               <div class="booking">
-                <%= booking.meal.name %>
-                <p> Price: R$ <%= booking.price %></p>
-                <p class="pending">Pending</p>
-
-              </div>
+          <div class="activity">
+            <% bookings.each do |booking| %>
+            <div class="booking">
+              <% if booking.confirmed? == false %>
+              <%= booking.meal.name %>
+              <p> Price: R$ <%= booking.price %></p>
+              <p class="pending">Pending</p>
               <% end %>
-
             </div>
+            <% end %>
+          </div>
           <% end %>
         </div>
-          <div role="tabpanel" class="tab-pane no-border" id="profile">
-            <div class="activity empty">
-              <p>ADD HERE CONFIRMED BOOKINGS - ONCE CHEF HAS CONFIRMED</p>
+        <div role="tabpanel" class="tab-pane no-border" id="profile">
+          <div class="activity empty">
+            <% bookings.each do |booking| %>
+            <div class="booking">
+              <% if booking.confirmed? == true %>
+              <%= booking.meal.name %>
+              <p> Price: R$ <%= booking.price %></p>
+              <%= link_to "Cancel", booking_path(booking, cancel: true), method: :patch %>
+              <% end %>
             </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
