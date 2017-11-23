@@ -1,8 +1,11 @@
 <div class="row">
+
   <div class="col-xs-12 col-md-4">
+
     <div class="profile-info">
       <h2> <%= @user.name %> </h2>
-      <%= image_tag(@user.facebook_picture_url, :class => "profile-image") %>
+       <%= image_tag avatar_url, class: "profile-image" %>
+
       <div class="edit_profile">
         <p>Email: <%= current_user.email %></p>
         <%= link_to "Edit profile", root_path %>
@@ -14,7 +17,8 @@
       <div class="my-row">
         <%= image_tag('chef.png', :class => "profile-icon flex-item") %>
         <h2 class="flex-item">My chef profile</h2>
-      </div>
+       </div>
+
       <!-- From Boostrap  - other features here https://getbootstrap.com/docs/3.3/javascript/#tabs
       -->
       <!-- Tab menu -->
@@ -22,53 +26,65 @@
         <li role="presentation" class="active"><a class="tab" href="#booking" aria-controls="requests" role="tab" data-toggle="tab">Booking Requests</a></li>
         <li role="presentation"><a href="#confirmed" aria-controls="confirmed" role="tab" data-toggle="tab">Confirmed customers</a></li>
         <li role="presentation"><a href="#meals" aria-controls="meals" role="tab" data-toggle="tab">My meals</a></li>
+
       </ul>
       <!-- Tab content -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active no-border" id="booking">
           <% if @bookings.empty? %>
-          <div class="activity empty">
-            <p>Oh no you don't have any bookings yet 😢 </p> <br>
-            <p>Use social media to promote your meal or create a new one <%= link_to "here", new_meal_path %></p>
-          </div>
-          <% else %>
-          <div class="activity">
-            <% bookings.each do |booking| %>
-            <div class="booking">
-              <% if booking.confirmed? == false %>
-              <%= booking.meal.name %>
-              <p> Price: R$ <%= booking.price %></p>
-              <%= link_to "Confirm", booking_path(booking, confirm: true), method: :patch %>
-              <% end %>
+
+            <div class="activity empty">
+              <p>Oh no you don't have any bookings yet 😢 </p> <br>
+              <p>Use social media to promote your meal or create a new one <%= link_to "here", new_meal_path %></p>
             </div>
-            <% end %>
-          </div>
+
+          <% else %>
+
+            <div class="activity">
+
+              <% bookings.each do |booking| %>
+               <div class="booking">
+                <% if booking.confirmed? == false %>
+                <%= booking.meal.name %>
+                <p> Price: R$ <%= booking.price %></p>
+                <%= link_to "Confirm", booking_path(booking, confirm: true), method: :patch %>
+
+              <% end %>
+              </div>
+
+              <% end %>
+
+            </div>
           <% end %>
         </div>
-        <div role="tabpanel" class="tab-pane no-border" id="confirmed">
-          <div class="activity empty">
-            <% bookings.each do |booking| %>
-            <div class="booking">
-              <% if booking.confirmed? == true %>
-              <%= booking.meal.name %>
-              <p> Price: R$ <%= booking.price %></p>
-              <%= link_to "Cancel", booking_path(booking, cancel: true), method: :patch %>
+          <div role="tabpanel" class="tab-pane no-border" id="confirmed">
+            <div class="activity empty">
+               <% bookings.each do |booking| %>
+               <div class="booking">
+                <% if booking.confirmed? == true %>
+                <%= booking.meal.name %>
+                <p> Price: R$ <%= booking.price %></p>
+                  <%= link_to "Cancel", booking_path(booking, cancel: true), method: :patch %>
+              <% end %>
+              </div>
               <% end %>
             </div>
-            <% end %>
-          </div>
         </div>
-        <div role="tabpanel" class="tab-pane no-border" id="meals">
-          <div class="activity empty">
-            <% meals.each do |meal| %>
-            <div class="booking">
-              <%= meal.name %>
+         <div role="tabpanel" class="tab-pane no-border" id="meals">
+            <div class="activity empty">
+              <% meals.each do |meal| %>
+               <div class="booking">
+                <%= meal.name %>
+              </div>
+              <% end %>
+              <%= button_to "Add new meal", new_meal_path, :method => :get %>
+
             </div>
-            <% end %>
-            <%= button_to "Add new meal", new_meal_path, :method => :get %>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
