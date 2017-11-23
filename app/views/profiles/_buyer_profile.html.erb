@@ -1,0 +1,61 @@
+<div class="row">
+
+  <div class="col-xs-12 col-md-4">
+
+    <div class="profile-info">
+      <h2> <%= @user.name %> </h2>
+       <%= image_tag('diner.png', :class => "profile-icon") %>
+    <p>Diner</p>
+
+      <%= image_tag(@user.facebook_picture_url, :class => "profile-image") %>
+      <div class="edit_profile">
+        <p>Email: <%= current_user.email %></p>
+        <%= link_to "Edit profile", root_path %>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-8">
+    <div class="profile-activity">
+
+      <!-- From Boostrap  - other features here https://getbootstrap.com/docs/3.3/javascript/#tabs
+      -->
+      <!-- Tab menu -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active   "><a class="tab" href="#home" aria-controls="requests" role="tab" data-toggle="tab">Requests</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="confirmed" role="tab" data-toggle="tab">Confirmed dinners</a></li>
+      </ul>
+      <!-- Tab content -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active no-border" id="home">
+          <% if @bookings.empty? %>
+
+            <div class="activity empty">
+              <p>Oh no you don't have any bookings yet 😢 </p> <br>
+              <p>Browse meals <%= link_to "here", root_path %></p>
+            </div>
+
+          <% else %>
+
+            <div class="activity">
+
+              <% bookings.each do |booking| %>
+               <div class="booking">
+                <%= booking.meal.name %>
+                <p> Price: R$ <%= booking.price %></p>
+                <p class="pending">Pending</p>
+
+              </div>
+              <% end %>
+
+            </div>
+          <% end %>
+        </div>
+          <div role="tabpanel" class="tab-pane no-border" id="profile">
+            <div class="activity empty">
+              <p>ADD HERE CONFIRMED BOOKINGS - ONCE CHEF HAS CONFIRMED</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

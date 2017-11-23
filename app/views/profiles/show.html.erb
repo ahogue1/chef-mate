@@ -9,8 +9,6 @@
    </div>
    <%  end %>
 
-    <div class="row">
-
       <% if current_user.chef? && current_user.buyer? %>
         <%= render 'chef_profile', user: @user, bookings: @bookings, meals: @meals %>
       <% elsif %>
@@ -22,6 +20,6 @@
 
     </div>
   </div>
-</div>
+
 
 
