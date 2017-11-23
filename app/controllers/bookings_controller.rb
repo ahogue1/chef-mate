@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
 
-  before_action :set_booking, only: [:show]
+  before_action :set_booking, only: [:show, :update]
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.confirmed = false
     @booking.buyer = current_user
 
     @meal = @booking.meal
@@ -17,6 +18,17 @@ class BookingsController < ApplicationController
 
   def show
     @meal = @booking.meal
+  end
+
+  def update
+    if params[:confirm] == 'true'
+      @booking.confirm!
+    elsif params[:cancel] == 'true'
+      @booking.cancel!
+    end
+
+    redirect_to profile_path(current_user)
+
   end
 
 

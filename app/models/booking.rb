@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
   validates :date, :people, presence: true
   before_save :set_price
 
+
   def chef
     return self.meal.chef
   end
@@ -12,5 +13,18 @@ class Booking < ApplicationRecord
     self.price = meal.price * people
   end
 
+  def confirm!
+    self.confirmed = true
+    self.save
+  end
+
+  def confirmed?
+    self.confirmed
+  end
+
+  def cancel!
+    self.confirmed = false
+    self.save
+  end
 
 end

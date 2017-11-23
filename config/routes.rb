@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   resources :profiles, only: [:show]
-  resources :bookings, only: [:create, :show]
+  resources :bookings, only: [:create, :show, :update]
   resources :meals
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

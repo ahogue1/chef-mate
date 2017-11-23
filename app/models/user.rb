@@ -5,12 +5,20 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
   has_many :meals, foreign_key: 'chef_id'
-  has_many :bookings, foreign_key: 'buyer_id', through: :meals
+  has_many :bookings, foreign_key: 'buyer_id'
   validates :first_name,:last_name, presence: true
   after_create :send_welcome_email, :subscribe_to_newsletter
 
   def name
     "#{first_name} #{last_name}"
+  end
+
+  def chef?
+    meals.any?
+  end
+
+  def buyer?
+    bookings.any?
   end
 
   def self.find_for_facebook_oauth(auth)

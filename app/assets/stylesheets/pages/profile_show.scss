@@ -1,14 +1,29 @@
+
+/* ------------------------- Layout-------------------------- */
+
 .profile-wrapper {
   margin: 100px;
 
 }
+
+.my-row {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.flex-item {
+  align-self: center;
+flex: 0 0 auto;
+}
+
+/* -----------------------Profile info --------------------- */
 .profile-info {
-  height: 400px;
   background-color: white;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px;
 }
 
 .profile-image {
@@ -20,6 +35,17 @@
 .edit-profile {
   display: flex;
 }
+
+.profile-icon {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.icon-label {
+  text-align: center;
+}
+
+/* -----------------------Activity tabs--------------------- */
 
 .profile-activity {
   margin-left: 70px;
@@ -40,3 +66,8 @@
 .booking {
   margin: 10px;
 }
+
+.pending {
+  color: gray;
+}
+
