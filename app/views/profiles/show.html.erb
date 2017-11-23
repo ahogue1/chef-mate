@@ -10,27 +10,16 @@
    <%  end %>
 
     <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="profile-info">
-          <h2> <%= @user.name %> </h2>
-          <%= image_tag(@user.facebook_picture_url, :class => "profile-image") %>
-          <div class="edit_profile">
-            <p>Email: <%= current_user.email %></p>
-            <%= link_to "Edit profile", root_path %>
-          </div>
-        </div>
-      </div>
-        <div class="col-xs-12 col-md-8">
-          <div class="profile-activity">
 
-            <%= render 'tabs' %>
+      <% if current_user.chef? && current_user.buyer? %>
+        <%= render 'chef_profile', user: @user, bookings: @bookings, meals: @meals %>
+      <% elsif %>
+        <% current_user.chef? %>
+        <%= render 'chef_profile', user: @user, bookings: @bookings, meals: @meals  %>
+      <% else %>
+        <%= render 'buyer_profile',user: @user, bookings: @bookings, meals: @meals %>
+      <% end %>
 
-
-
-
-
-          </div>
-      </div>
     </div>
   </div>
 </div>
