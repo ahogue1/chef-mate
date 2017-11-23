@@ -4,7 +4,9 @@
     <% if current_user.chef? && current_user.buyer? %>
      <div class="profile-choose">
       <button class="btn btn-info" id="diner">Switch to Diner</button>
+       <button class="btn btn-info" style="display: none;" id="chef">Switch to Chef</button>
      </div>
+
 
    <%  end %>
     <div id="content">
@@ -25,13 +27,27 @@
 <% content_for(:after_js) do %>
   <script>
 
+  const diner = document.getElementById("diner");
+  const chef = document.getElementById("chef");
+
   const render_diner = (event) => {
     document.getElementById("content").innerHTML = '<%= j render "diner_profile",user: @user, bookings: @bookings, meals: @meals %>';
+    diner.style.display = "none";
+    chef.style.display = "block";
   }
 
-  const diner = document.getElementById("diner");
-  diner.addEventListener("click", render_diner);
-  alert("hello");
+  const render_chef = (event) => {
+    document.getElementById("content").innerHTML = '<%= j render "chef_profile",user: @user, bookings: @bookings, meals: @meals %>';
+    diner.style.display = "block";
+    chef.style.display = "none";
+  }
+
+  if (diner) {
+
+    diner.addEventListener("click", render_diner);
+    chef.addEventListener("click", render_chef);
+  }
+
 
 
   </script>
