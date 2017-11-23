@@ -6,6 +6,15 @@
 
 }
 
+.my-row {
+  display: flex;
+}
+
+.flex-item {
+  align-self: center;
+flex: 0 0 auto;
+}
+
 /* -----------------------Profile info --------------------- */
 .profile-info {
   background-color: white;
@@ -28,6 +37,7 @@
 
 .profile-icon {
   width: 50px;
+  margin-right: 20px;
 }
 
 .icon-label {

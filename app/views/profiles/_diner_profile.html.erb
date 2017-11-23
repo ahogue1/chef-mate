@@ -5,8 +5,6 @@
 
     <div class="profile-info">
       <h2> <%= @user.name %> </h2>
-       <%= image_tag('diner.png', :class => "profile-icon") %>
-    <p>Diner</p>
 
       <%= image_tag(@user.facebook_picture_url, :class => "profile-image") %>
       <div class="edit_profile">
@@ -17,6 +15,11 @@
   </div>
   <div class="col-xs-12 col-md-8">
     <div class="profile-activity">
+      <div class="my-row">
+        <%= image_tag('diner.png', :class => "profile-icon flex-item") %>
+        <h2 class="flex-item">My diner profile</h2>
+       </div>
+
 
       <!-- From Boostrap  - other features here https://getbootstrap.com/docs/3.3/javascript/#tabs
       -->
