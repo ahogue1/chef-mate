@@ -1,5 +1,5 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%=meal.photo %>);">
-  <div class="card-category">Popular</div>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(meal.photo, :class=>"card", :effect=>"auto_color", :width=>250, :height=>175, :crop=>"fill")%>);">
+  <div class="card-category"></div>
   <div class="card-description">
     <h2><%= meal.name %></h2>
     <p><%= meal.description %></p>
