@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :meal
   belongs_to :buyer, class_name: "User"
+  validates :date, :people, presence: true
   before_save :set_price
 
   def chef

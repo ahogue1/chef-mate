@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_many :meals, foreign_key: 'chef_id'
   has_many :bookings, foreign_key: 'buyer_id', through: :meals
+  validates :first_name,:last_name, presence: true
   after_create :send_welcome_email, :subscribe_to_newsletter
 
   def name
