@@ -2,6 +2,7 @@
 .new-meal-container{
   width: 600px;
   margin: 0 auto;
+  padding-top: 50px;
   h1, label{
     margin-top: 0px;
     color: white;
@@ -10,8 +11,8 @@
   }
 
   h2{
-    color: orange;
-    font-size: 18px;
+    color: white;
+    font-size: 24px;
     margin-top: 10px;
     text-shadow: 1px 1px 1px #898080;
   }
@@ -27,6 +28,8 @@
 #cancel-btn-new{
   color: black;
   margin-left: 224px;
+  opacity: 0;
+
 }
 
 #cancel-btn-new:hover{
@@ -35,8 +38,7 @@
 
 .new-meal-form{
   width: 300px;
-  margin: 19px;
-  margin-left: 124px;
+  margin-top: 30px;
   padding-bottom: 2px;
 }
 
@@ -59,6 +61,12 @@
 }
 
 #submit-button-new{
-  margin-left: 94px;
+
+  margin: 30px 0 30px 94px;
   box-shadow: 1px 1px 1px #898080;
+
+}
+
+.form-inputs label {
+  font-weight: normal;
 }

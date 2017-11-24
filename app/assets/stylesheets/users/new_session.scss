@@ -6,7 +6,6 @@
 .login-container{
   width: 800px;
   margin: 0 auto;
-  background-color: rgba(90, 90, 90, .7);
   padding: 121px;
 }
 
@@ -18,4 +17,33 @@
 
 .help-block{
   color: black;
+}
+
+
+
+.login-header {
+  margin-bottom: 50px;
+}
+
+.login-form label {
+  font-weight: normal;
+}
+
+
+.shared-links {
+  margin-top: 50px;
+
+  a {
+    color: white;
+    font-weight: lighter;
+  }
+}
+
+.form-actions {
+  margin-left: 10px;
+}
+
+.help-block {
+  color: white;
+  font-size: 12px;
 }
