@@ -31,6 +31,10 @@ class BookingsController < ApplicationController
 
   end
 
+  def chef
+    self.meal.chef_id
+  end
+
 
   private
 
