@@ -25,14 +25,14 @@
       <!-- Tab content -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active no-border" id="home">
-          <% if @bookings.empty? %>
+          <% if @buyer_bookings.empty? %>
           <div class="activity empty">
             <p>Oh no you don't have any bookings yet 😢 </p> <br>
             <p>Browse meals <%= link_to "here", root_path %></p>
           </div>
           <% else %>
           <div class="activity">
-            <% bookings.each do |booking| %>
+            <% @buyer_bookings.each do |booking| %>
             <div class="booking">
               <% if booking.confirmed? == false %>
               <div class="booking-row">
@@ -49,7 +49,7 @@
         </div>
         <div role="tabpanel" class="tab-pane no-border" id="profile">
           <div class="activity empty">
-            <% bookings.each do |booking| %>
+            <% @buyer_bookings.each do |booking| %>
             <div class="booking">
               <% if booking.confirmed? == true %>
               <%= booking.meal.name %>

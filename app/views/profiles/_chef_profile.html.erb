@@ -31,7 +31,7 @@
       <!-- Tab content -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active no-border" id="booking">
-          <% if @bookings.empty? %>
+          <% if @chef_bookings.empty? %>
 
             <div class="activity empty">
               <p>Oh no you don't have any bookings yet 😢 </p> <br>
@@ -42,7 +42,7 @@
 
             <div class="activity">
 
-              <% bookings.each do |booking| %>
+              <% @chef_bookings.each do |booking| %>
                <div class="booking">
                 <% if booking.confirmed? == false %>
                 <div class="booking-confirm">
@@ -62,12 +62,21 @@
         </div>
           <div role="tabpanel" class="tab-pane no-border" id="confirmed">
             <div class="activity empty">
-               <% bookings.each do |booking| %>
+               <% @chef_bookings.each do |booking| %>
                <div class="booking-content">
                 <% if booking.confirmed? == true %>
-                <%= booking.meal.name %>
-                <p> Price: R$ <%= booking.price %></p>
-                  <%= link_to "Cancel", booking_path(booking, cancel: true), method: :patch %>
+
+                <div class="booking-confirm">
+               <%= cl_image_tag(booking.meal.photo, :class => "meal-image", :effect=>"auto_color", :width=>50) %>
+              <%= link_to "#{booking.meal.name}", meal_path(booking.meal), class: "meal-link" %>
+
+                <%= link_to "Cancel", booking_path(booking, cancel: true), method: :patch, class: "meal-link btn btn-info" %>
+              </div>
+
+
+
+
+
               <% end %>
               </div>
               <% end %>
