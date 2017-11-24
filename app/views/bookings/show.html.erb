@@ -1,6 +1,6 @@
 <div class="booking-show-header">
   <h1>Hurray!</h1>
-   <h2>You've booked <%= @meal.name.capitalize %></h2>
+   <h2>You've sent a request for <%= @meal.name.capitalize %></h2>
 </div>
 
 <div class="booking-show-container">
@@ -11,6 +11,7 @@
    <p>For <%= @booking.people %> people</p>
    <p>Date = <%= @booking.date %></p>
     <p>Your Chef is <%= @meal.chef.name %></p>
+    <p> <strong>Your chef will respond soon</strong></p>
     <p>Bon Appetit!</p>
   </div>
 </div>
