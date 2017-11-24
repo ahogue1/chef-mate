@@ -27,6 +27,7 @@ gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem 'gibbon'
+gem 'nokogiri'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

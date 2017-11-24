@@ -2,7 +2,7 @@
 
 <div class="main-container">
 
-  <div class="row meals">
+  <div class="row meals" id="meals_index">
     <% @meals.each do |meal| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <%= render 'card', meal: meal %>
