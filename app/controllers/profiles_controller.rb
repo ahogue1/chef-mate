@@ -2,7 +2,8 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @bookings = @user.bookings
+    @chef_bookings = Booking.where(:chef == @user)
+    @buyer_bookings = @user.bookings
     @meals = @user.meals
   end
 
