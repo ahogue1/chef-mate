@@ -4,9 +4,13 @@ class MealsController < ApplicationController
   # GET /meals
   # GET /meals.json
   def index
-    @meals = Meal.all
+    if params[:search].present?
+      @meals = Meal.where("lower(unaccent(meals.formatted_address)) LIKE :search", {search: "%#{params[:search].downcase}%"})
+    else
+      @meals = Meal.all
+    end
 
-    @mapped_meals = Meal.where.not(latitude: nil, longitude: nil)
+    @mapped_meals = @meals.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@mapped_meals) do |meal, marker|
       marker.lat meal.latitude
       marker.lng meal.longitude
@@ -35,7 +39,7 @@ class MealsController < ApplicationController
 
     respond_to do |format|
       if @meal.save
-        format.html { redirect_to @meal, notice: 'Meal was successfully created.' }
+        format.html { redirect_to profile_path(current_user), notice: 'Meal was successfully created.' }
         format.json { render :show, status: :created, location: @meal }
       else
         format.html { render :new }

@@ -1,4 +1,4 @@
-<%= simple_form_for(@meal) do |f| %>
+<%= simple_form_for(@meal, remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -12,6 +12,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary", id: "submit-button-new" %>
+    <%= f.button :submit, class: "btn btn-primary", id: "submit-button-new", options: { 'data-toggle' => "modal" , 'data-target' =>"#exampleModal" } %>
   </div>
 <% end %>
+
+<%= render 'modal' %>
+
