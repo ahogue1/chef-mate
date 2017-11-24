@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123181615) do
+ActiveRecord::Schema.define(version: 20171124163018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "bookings", force: :cascade do |t|
     t.date     "date"
@@ -33,12 +34,13 @@ ActiveRecord::Schema.define(version: 20171123181615) do
     t.string   "photo"
     t.string   "category"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "chef_id"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.string   "formatted_address"
   end
 
   create_table "users", force: :cascade do |t|
